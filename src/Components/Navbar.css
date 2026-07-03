@@ -1,0 +1,134 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Gradient + glass effect */
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.85),
+    rgba(236, 72, 153, 0.85)
+  );
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.navbar-logo a {
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  transform: scale(1.05);
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+/* Link style */
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Underline hover animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  opacity: 0.9;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: rotate(90deg);
+}
+
+/* ===================== */
+/* Mobile Responsive */
+/* ===================== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 25px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(124, 58, 237, 0.95),
+      rgba(236, 72, 153, 0.95)
+    );
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 0;
+    display: none;
+    animation: slideDown 0.4s ease forwards;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+  }
+}

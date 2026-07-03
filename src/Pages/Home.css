@@ -1,0 +1,24 @@
+.hero {
+  height: 100vh;
+  background-image: url("../assets/heroimg1.jpg"); /* image in public/images */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  text-align: center;
+  position: relative;
+}
+.hero-content h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #7c3aed, #ec4899;
+}
+.hero-content h3 {
+  text-align: center;
+  font-size: 25px;
+  color: #7c3aed, #ec4899;
+}
